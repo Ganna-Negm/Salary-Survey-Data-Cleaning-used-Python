@@ -1,0 +1,194 @@
+# Salary Survey Data Cleaning 🧹📊
+
+A data cleaning project using **Python and Pandas** to clean, standardize, and prepare a Salary Survey dataset for further analysis.
+
+> This project was completed as part of my training at **NTI (National Telecommunication Institute)**.
+
+---
+
+## 📌 About the Project
+
+This project focuses on cleaning and preparing a Salary Survey dataset that contains information about salaries, jobs, industries, countries, education, experience, and other employee-related attributes.
+
+The dataset contained several real-world data quality issues, including:
+
+* Missing values
+* Inconsistent country names
+* Inconsistent city and state values
+* Incorrect or unusual values
+* Duplicate/inconsistent entries
+* Different formats for the same information
+* Unclean job titles and industries
+
+The goal was to make the dataset more consistent and ready for analysis.
+
+---
+
+## 🛠️ Tools & Technologies
+
+* **Python**
+* **Pandas**
+* **NumPy**
+* **Scikit-learn**
+* **Jupyter Notebook / Google Colab**
+
+---
+
+## 🧹 Data Cleaning Steps
+
+### 1. Column Renaming
+
+Renamed the original survey questions into shorter and clearer column names to make the dataset easier to work with.
+
+### 2. Missing Values
+
+Handled missing values in different columns depending on the type of data.
+
+Examples:
+
+* Replaced missing text values with `Unknown` or `Not Provided`
+* Used the mean for missing numeric compensation values where appropriate
+
+### 3. Country Cleaning
+
+Standardized different representations of the same country.
+
+For example:
+
+```text
+USA
+US
+U.S.
+U.S.A.
+United States of America
+```
+
+were standardized to:
+
+```text
+United States
+```
+
+Other inconsistent or invalid entries were reviewed and replaced when necessary.
+
+### 4. City & State Cleaning
+
+Cleaned inconsistent city names and handled values containing multiple cities or unclear information.
+
+Examples included:
+
+* `Banglore` → `Bangalore`
+* `Milano` → `Milan`
+* `Newyork` → `New York`
+
+Unclear or overly identifying responses were replaced with `Unknown` where appropriate.
+
+For state values containing multiple states, the value was treated as `Unknown`.
+
+### 5. Job & Industry Cleaning
+
+Standardized job titles and industry values by:
+
+* Removing unnecessary spaces
+* Standardizing capitalization
+* Replacing incorrect or inconsistent values
+* Grouping some equivalent responses
+
+### 6. Salary & Compensation
+
+Reviewed the Salary and Additional Monetary Compensation columns and handled missing values.
+
+The data was also prepared for numerical processing.
+
+### 7. Date Conversion
+
+Converted the `Time` column to a proper datetime format using Pandas.
+
+### 8. Duplicate & Null Checks
+
+Checked the dataset for:
+
+* Missing values
+* Duplicate rows
+* Duplicate timestamps
+* Remaining inconsistencies after cleaning
+
+---
+
+## 📊 Normalization
+
+After cleaning the Salary column, I applied several normalization techniques to understand different ways of scaling numerical data.
+
+### Min-Max Normalization
+
+Scales values between 0 and 1.
+
+```text
+(x - min) / (max - min)
+```
+
+### Z-Score Normalization
+
+Standardizes values based on the mean and standard deviation.
+
+```text
+(x - mean) / standard deviation
+```
+
+### Robust Normalization
+
+Uses the median and Interquartile Range (IQR), making it less sensitive to extreme values.
+
+```text
+(x - median) / IQR
+```
+
+### Decimal Scaling
+
+Scales values by a power of 10 based on the maximum absolute value.
+
+---
+
+## 📁 Project Structure
+
+```text
+Salary-Survey-Data-Cleaning/
+│ Data_Cleaning_Salary_Survey.ipynb
+
+```
+
+---
+
+## 🎯 What I Learned
+
+This project helped me practice how to work with messy real-world data instead of perfectly prepared datasets.
+
+Some of the main things I practiced:
+
+* Data cleaning with Pandas
+* Handling missing values
+* Standardizing categorical data
+* Detecting inconsistent values
+* Working with numerical data
+* Date and time conversion
+* Data validation
+* Data normalization
+* Preparing data for further analysis
+
+One of the main lessons from this project was that **data cleaning is not just about removing null values**. It requires understanding the data, checking unusual values, and making decisions based on the context of each column.
+
+---
+
+## 👩‍💻 Author
+
+**Ganna Negm**
+
+Data Analysis Learner | Python | Pandas | SQL | Power BI | Excel
+
+---
+
+## 📌 Training
+
+This project was completed as part of my training at:
+
+**National Telecommunication Institute (NTI)**
